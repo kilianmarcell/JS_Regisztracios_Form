@@ -4,6 +4,11 @@ function katt() {
 
 function megvaltozott(e) {
     let hossz = document.getElementById("nevMezo").value.length;
+    if (hossz > 20) {
+        document.getElementById("nevHossz").style.color = "red";
+    } else {
+        document.getElementById("nevHossz").style.color = "black";
+    }
     document.getElementById("nevHossz").innerHTML = hossz + "/20";
 }
 
