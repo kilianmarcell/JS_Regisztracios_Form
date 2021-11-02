@@ -1,5 +1,11 @@
 function katt() {
+    let nevEllenor = document.getElementById("nevHossz").style.color;
+    let jelszoEllenor = document.getElementById("jelszoHossz").style.color;
+    let jelszoMegintEllenor = document.getElementById("jelszoEllenorzes").innerHTML;
 
+    if (nevEllenor == "black" && jelszoEllenor == "black" && jelszoMegintEllenor == "") {
+        document.getElementById("sikeresE").innerHTML = "Sikeres regisztráció!";
+    }
 }
 
 function nevMegvaltozott(e) {
