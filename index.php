@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?php
+
+$sikeresE = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $nevMezo = $_POST['nevMezo'] ?? '';
+    $jelszoMezo = $_POST['jelszoMezo'] ?? '';
+    $jelszoMegintMezo = $_POST['jelszoMegintMezo'] ?? '';
+
+    if (strlen($nevMezo) <= 20 && $nevMezo !== '' && strlen($jelszoMezo) <= 8 && $jelszoMezo !== '' &&
+        $jelszoMezo === $jelszoMegintMezo) {
+
+            $sikeresE = true;
+
+    }
+}
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +28,33 @@
 </head>
 <body>
     <form method="POST" class="mx-auto w-50 mt-5">
-        <selection class="h2">Név:</selection> <input type="text" id="nevMezo" class="h2"><span id="nevHossz" class="h4"></span><br>
-        <selection class="h2">Jelszó:</selection> <input type="password" id="jelszoMezo" class="h2"><span id="jelszoHossz" class="h4"></span><br>
-        <selection class="h2">Jelszó ismét:</selection> <input type="password" id="jelszoMegintMezo" class="h2"><span id="jelszoEllenorzes" class="h4"></span><br>
+        <selection class="h2">Név:</selection>
+        <input type="text" id="nevMezo" name="nevMezo" class="h2">
+        <span id="nevHossz" name="nevHossz" class="h4"></span>
+        <br>
+        
+        <selection class="h2">Jelszó:</selection>
+        <input type="password" id="jelszoMezo" name="jelszoMezo" class="h2">
+        <span id="jelszoHossz" name="jelszoHossz" class="h4"></span>
+        <br>
+
+        <selection class="h2">Jelszó ismét:</selection>
+        <input type="password" id="jelszoMegintMezo" name="jelszoMegintMezo" class="h2">
+        <span id="jelszoEllenorzes" name="jelszoEllenorzes" class="h4"></span>
+        <br>
+
         <input type="submit" id="gomb" class="btn btn-dark btn-lg mt-5 w-50" value="Regisztrál">
-        <div class="h2 mt-2" id="sikeresE"></div>
+
+        <div class="h2 mt-2">
+            <?php
+            
+                if ($sikeresE) {
+                    sleep(2);
+                    echo "Sikeres regisztráció!";
+                }
+            
+            ?>
+        </div>
     </form>
 </body>
 </html>

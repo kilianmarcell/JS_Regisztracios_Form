@@ -1,20 +1,11 @@
 function katt(e) {
-    setTimeout(regisztralas, 2000);
-    e.preventDefault();
-}
-
-function regisztralas() {
     let nevSzinEllenor = document.getElementById("nevHossz").style.color;
     let nevTartalomEllenor = document.getElementById("nevHossz").innerHTML;
     let jelszoEllenor = document.getElementById("jelszoHossz").style.color;
     let jelszoMegintEllenor = document.getElementById("jelszoEllenorzes").innerHTML;
-
-    if (nevSzinEllenor == "black" && nevTartalomEllenor != "" && jelszoEllenor == "black" && jelszoMegintEllenor == "") {
-        document.getElementById("sikeresE").innerHTML = "Sikeres regisztráció!";
-    } else {
-        /**
-         * TODO: e.preventDefault();
-         */
+    
+    if (nevSzinEllenor != "black" || nevTartalomEllenor == "" || nevTartalomEllenor == "0/20" || jelszoEllenor != "black" || jelszoMegintEllenor != "") {
+        e.preventDefault();
     }
 }
 
