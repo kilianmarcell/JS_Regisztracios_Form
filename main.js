@@ -1,14 +1,20 @@
 function katt(e) {
-    setTimeout(regisztralas, 2000)
+    setTimeout(regisztralas, 2000);
+    e.preventDefault();
 }
 
 function regisztralas() {
-    let nevEllenor = document.getElementById("nevHossz").style.color;
+    let nevSzinEllenor = document.getElementById("nevHossz").style.color;
+    let nevTartalomEllenor = document.getElementById("nevHossz").innerHTML;
     let jelszoEllenor = document.getElementById("jelszoHossz").style.color;
     let jelszoMegintEllenor = document.getElementById("jelszoEllenorzes").innerHTML;
 
-    if (nevEllenor == "black" && jelszoEllenor == "black" && jelszoMegintEllenor == "") {
+    if (nevSzinEllenor == "black" && nevTartalomEllenor != "" && jelszoEllenor == "black" && jelszoMegintEllenor == "") {
         document.getElementById("sikeresE").innerHTML = "Sikeres regisztráció!";
+    } else {
+        /**
+         * TODO: e.preventDefault();
+         */
     }
 }
 
