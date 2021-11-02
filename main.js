@@ -1,15 +1,19 @@
 function katt(e) {
+
     let nevSzinEllenor = document.getElementById("nevHossz").style.color;
     let nevTartalomEllenor = document.getElementById("nevHossz").innerHTML;
+
     let jelszoEllenor = document.getElementById("jelszoHossz").style.color;
     let jelszoMegintEllenor = document.getElementById("jelszoEllenorzes").innerHTML;
     
     if (nevSzinEllenor != "black" || nevTartalomEllenor == "" || nevTartalomEllenor == "0/20" || jelszoEllenor != "black" || jelszoMegintEllenor != "") {
         e.preventDefault();
     }
+
 }
 
 function nevMegvaltozott(e) {
+
     let hossz = document.getElementById("nevMezo").value.length;
 
     if (hossz > 20) {
@@ -19,9 +23,11 @@ function nevMegvaltozott(e) {
     }
 
     document.getElementById("nevHossz").innerHTML = hossz + "/20";
+    
 }
 
 function jelszoMegvaltozott(e) {
+
     let hossz = document.getElementById("jelszoMezo").value.length;
 
     if (hossz < 8) {
@@ -31,10 +37,13 @@ function jelszoMegvaltozott(e) {
     }
 
     document.getElementById("jelszoHossz").innerHTML = hossz + "/8";
+
     //jelszoEllenorzes();
+
 }
 
 function jelszoEllenorzes(e) {
+
     let jelszo = document.getElementById("jelszoMezo").value;
     let jelszoIsmet = document.getElementById("jelszoMegintMezo").value;
 
@@ -43,15 +52,18 @@ function jelszoEllenorzes(e) {
     } else {
         document.getElementById("jelszoEllenorzes").innerHTML = "";
     }
+
 }
 
 function init() {
+
     document.getElementById("gomb").addEventListener("click", katt);
 
     document.getElementById("nevMezo").addEventListener("input", nevMegvaltozott);
     document.getElementById("jelszoMezo").addEventListener("input", jelszoMegvaltozott);
 
     document.getElementById("jelszoMegintMezo").addEventListener("change", jelszoEllenorzes);
+    
 }
 
 document.addEventListener("DOMContentLoaded", init);
