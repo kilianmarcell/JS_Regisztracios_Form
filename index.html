@@ -10,10 +10,12 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <selection class="h2 m-5">Név:</selection> <input type="text" id="nevMezo" class="h2"><span id="nevHossz"></span><br>
-    Jelszó: <input type="password" id="jelszoMezo"><span id="jelszoHossz"></span><br>
-    Jelszó ismét: <input type="password" id="jelszoMegintMezo"><span id="jelszoEllenorzes"></span><br>
-    <input type="submit" id="gomb" class="btn btn-dark btn-lg" value="Regisztrál">
-    <div class="h2" id="sikeresE"></div>
+    <div method="POST" class="mx-auto w-50 mt-5">
+        <selection class="h2">Név:</selection> <input type="text" id="nevMezo" class="h2"><span id="nevHossz" class="h4"></span><br>
+        <selection class="h2">Jelszó:</selection> <input type="password" id="jelszoMezo" class="h2"><span id="jelszoHossz" class="h4"></span><br>
+        <selection class="h2">Jelszó ismét:</selection> <input type="password" id="jelszoMegintMezo" class="h2"><span id="jelszoEllenorzes" class="h4"></span><br>
+        <input type="submit" id="gomb" class="btn btn-dark btn-lg mt-5 w-50" value="Regisztrál">
+        <div class="h2 mt-2" id="sikeresE"></div>
+    </div>
 </body>
 </html>
