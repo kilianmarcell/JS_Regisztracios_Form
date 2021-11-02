@@ -1,4 +1,8 @@
-function katt() {
+function katt(e) {
+    setTimeout(regisztralas, 2000)
+}
+
+function regisztralas() {
     let nevEllenor = document.getElementById("nevHossz").style.color;
     let jelszoEllenor = document.getElementById("jelszoHossz").style.color;
     let jelszoMegintEllenor = document.getElementById("jelszoEllenorzes").innerHTML;
@@ -10,21 +14,25 @@ function katt() {
 
 function nevMegvaltozott(e) {
     let hossz = document.getElementById("nevMezo").value.length;
+
     if (hossz > 20) {
         document.getElementById("nevHossz").style.color = "red";
     } else {
         document.getElementById("nevHossz").style.color = "black";
     }
+
     document.getElementById("nevHossz").innerHTML = hossz + "/20";
 }
 
 function jelszoMegvaltozott(e) {
     let hossz = document.getElementById("jelszoMezo").value.length;
+
     if (hossz < 8) {
         document.getElementById("jelszoHossz").style.color = "red";
     } else {
         document.getElementById("jelszoHossz").style.color = "black";
     }
+
     document.getElementById("jelszoHossz").innerHTML = hossz + "/8";
     //jelszoEllenorzes();
 }
@@ -45,6 +53,7 @@ function init() {
 
     document.getElementById("nevMezo").addEventListener("input", nevMegvaltozott);
     document.getElementById("jelszoMezo").addEventListener("input", jelszoMegvaltozott);
+
     document.getElementById("jelszoMegintMezo").addEventListener("change", jelszoEllenorzes);
 }
 
